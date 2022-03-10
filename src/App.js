@@ -17,6 +17,7 @@ function App() {
                         element={<SearchPage/>}></Route>
                     <Route exact path='/account'
                         element={<AccountSettingsPage/>}></Route>
+                        <div>test</div>
                 </Routes>
             </Layout>
         </Router>
