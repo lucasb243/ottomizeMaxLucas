@@ -16,7 +16,7 @@ export default function TestMapsView() {
       map.locate().on("locationfound", function (e) {
         setPosition(e.latlng);
         map.flyTo(e.latlng, map.getZoom());
-        const radius = e.accuracy;
+        const radius = 2500;
         const circle = L.circle(e.latlng, radius);
         circle.addTo(map);
         setBbox(e.bounds.toBBoxString().split(","));
