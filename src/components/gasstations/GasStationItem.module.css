@@ -1,0 +1,22 @@
+.itemContainer{
+    display: flex;
+    flex-direction: row;
+}
+.container1{
+    width: 100%;
+}
+.stationname{
+    font-weight: bold;
+}
+.additionalinfo{
+
+}
+.container2{
+    position: right;
+}
+.price{
+    font-weight: bold;
+}
+.date{
+    
+}

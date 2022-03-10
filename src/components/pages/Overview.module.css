@@ -1,0 +1,42 @@
+.container{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.containerOverview{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 100%;
+    align-items: center;
+}
+.chartinfocontainer{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    max-width: 800px;
+    width: 100% ;
+    height: auto;
+}
+.chart{
+    height: auto;
+    width: 100%;
+}
+.chartinfos{
+    height: fit-content;
+}
+.chartinfos li{
+    list-style: none;
+    
+}
+.containerList{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+.listContainer{
+    max-width: 600px;
+    width: 100%;
+}

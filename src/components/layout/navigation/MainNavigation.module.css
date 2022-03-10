@@ -1,0 +1,22 @@
+.container{
+    width: 200px;
+    height: 100vh;
+    background-color: aquamarine;
+}
+.sidebar{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.sidebarHeader{
+    justify-self: flex-start;
+}
+.sidebarHeader h1{
+    font-size: 24px;
+}
+
+li{
+    margin-top: 20%;
+}
