@@ -11,7 +11,11 @@
     width: 100%;
     align-items: center;
 }
-h1{
+.containerOverview h1{
+    align-self: flex-start;
+}
+.containerList h1{
+    align-self: flex-start;
 }
 .chartinfocontainer{
     display: flex;
@@ -41,4 +45,6 @@ h1{
 .containerMap{
     max-width: 100%;
     width: 100%;
+    display: flex;
+    justify-content: center;
 }

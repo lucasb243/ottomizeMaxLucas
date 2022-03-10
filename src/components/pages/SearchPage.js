@@ -33,12 +33,12 @@ function SearchPage() {
   return (
     <>
       <div className={classes.container}>
-        <div className={classes.containerOverview}>
+        {/* <div className={classes.containerOverview}>
           <h1>Overview</h1>
           <div className={classes.containerMap}>
             <MapsView />
           </div>
-        </div>
+        </div> */}
         <div className={classes.containerOverview}>
           <h1>Overview</h1>
           <div className={classes.containerMap}>
