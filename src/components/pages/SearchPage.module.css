@@ -1,50 +1,61 @@
-.container{
-    padding: 40px;
+.container {
+  padding: 40px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.containerOverview {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 100%;
+  align-items: center;
+}
+/* .containerOverview h1 {
+  align-self: flex-start;
+} */
+/* .containerList h1 {
+  align-self: flex-start;
+} */
+.chartinfocontainer {
+  display: flex;
+  flex-direction: row;
+}
+.row {
+  justify-content: flex-end;
+  width: 83%;
+}
+.colButton {
     display: flex;
-    align-items: center;
-    flex-direction: column;
-}
-.containerOverview{
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    width: 100%;
-    align-items: center;
-}
-.containerOverview h1{
-    align-self: flex-start;
-}
-.containerList h1{
-    align-self: flex-start;
-}
-.chartinfocontainer{
-    display: flex;
-    flex-direction: row;
-}
-.chart{
-    width: 100%;
-}
-.chartinfos{
-    height: fit-content;
-}
-.chartinfos li{
-    list-style: none;
-    
-}
-.containerList{
-    display: flex;
-    width: 100%;
-    flex-direction: column;
-    justify-content: flex-start;
+    justify-content: flex-end;
     align-items: center;
 }
-.listContainer{
-    max-width: 50%;
-    width: 50%;
+.colButton Button {
+    height: 40px;
 }
-.containerMap{
-    max-width: 100%;
-    width: 100%;
-    display: flex;
-    justify-content: center;
+.chart {
+  width: 100%;
+}
+.chartinfos {
+  height: fit-content;
+}
+.chartinfos li {
+  list-style: none;
+}
+.containerList {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+.listContainer {
+  max-width: 50%;
+  width: 50%;
+}
+.containerMap {
+  max-width: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }

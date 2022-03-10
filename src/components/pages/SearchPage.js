@@ -4,6 +4,7 @@ import Card from "../ui/Card";
 import MapsView from "../ui/MapsView";
 import GasStationList from "../gasstations/GasStationList";
 import TestMapsView from "../ui/TestMapsView";
+import { Button, Row, Col } from "react-bootstrap";
 
 function SearchPage() {
   const DUMMY_DATA = [
@@ -40,13 +41,25 @@ function SearchPage() {
           </div>
         </div> */}
         <div className={classes.containerOverview}>
-          <h1>Overview</h1>
+          <Row className={classes.row}>
+            <Col>
+              <h1>Overview</h1>
+            </Col>
+          </Row>
           <div className={classes.containerMap}>
             <TestMapsView />
           </div>
         </div>
         <div className={classes.containerList}>
-          <h1>Gas stations nearby:</h1>
+          <Row className={classes.row}>
+            <Col>
+              <h1>Search results:</h1>
+            </Col>
+            <Col className={classes.colButton}>
+              <Button variant="secondary">+</Button>
+            </Col>
+          </Row>
+
           <div className={classes.listContainer}>
             <GasStationList gasStations={DUMMY_DATA} />
           </div>
