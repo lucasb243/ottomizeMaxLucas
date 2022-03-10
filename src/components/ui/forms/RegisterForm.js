@@ -15,7 +15,11 @@ function Registerform(props) {
         }
     }, [isLoadingSubmit]);
 
-    const handleClick = () => setLoading(true);
+    function handleSubmit(props){
+        setLoading(true);
+        props.onClickSubmit()
+    }
+    const handleClick = () => handleSubmit(props);
 
     function simulateNetworkRequest() {
         return new Promise((resolve) => setTimeout(resolve, 2000));
@@ -99,20 +103,14 @@ function Registerform(props) {
                                 size="lg">
                                 Cancel
                             </Button>
-                            <Button variant="primary" type="submit" size="lg"
-                                disabled={isLoadingSubmit}
-                                onClick={
-                                    !isLoadingSubmit ? handleClick : null
-                            }>
-                                {
-                                isLoadingSubmit ? 'Loading…' : 'Submit'
-                            } </Button>
+                            <Button variant="primary" type="submit" size="lg" disabled={isLoadingSubmit} onClick={ !isLoadingSubmit ? handleClick : null}> 
+                                {isLoadingSubmit ? 'Loading…' : 'Submit'} 
+                            </Button>
 
                         </Modal.Footer>
                     </Modal.Dialog>
                 </Modal>
             </Form>
-
         </>
     )
 }
