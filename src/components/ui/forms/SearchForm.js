@@ -54,15 +54,31 @@ function Searchform(props) {
                 <Form.Control type="text" placeholder="Enter fuel type" />
               </Form.Group>
 
-              <Form.Group className="mb-3" controlId="formGridAddress1">
-                <Form.Label>Datespan</Form.Label>
-                <Form.Control placeholder="YYYYMMDD - YYYYMMDD" />
-              </Form.Group>
+              <Row className="mb-3">
+                <Form.Group as={Col} controlId="formGridAddress1">
+                  <Form.Label>Date from</Form.Label>
+                  <Form.Control type="date" />
+                </Form.Group>
 
-              <Form.Group className="mb-3" controlId="formGridAddress2">
-                <Form.Label>Timespan</Form.Label>
-                <Form.Control placeholder="HHMM - HHMM" />
-              </Form.Group>
+                <Form.Group as={Col} controlId="formGridAddress1">
+                  <Form.Label>Date to</Form.Label>
+                  <Form.Control type="date"/>
+                </Form.Group>
+              </Row>
+
+              <Row className="mb-3">
+                <Form.Group as={Col} controlId="formGridAddress1">
+                  <Form.Label>Time from</Form.Label>
+                  <Form.Control type="time"/>
+                </Form.Group>
+
+                <Form.Group as={Col} controlId="formGridAddress1">
+                  <Form.Label>Time to</Form.Label>
+                  <Form.Control type="time"/>
+                </Form.Group>
+              </Row>
+
+
               {/* <Row className="mb-3">
                                 <Form.Group as={Col}
                                     controlId="formGridCity">
