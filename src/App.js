@@ -16,8 +16,8 @@ function App() {
                     <Route exact path='/searchpage'
                         element={<SearchPage/>}></Route>
                     <Route exact path='/account'
-                        element={<AccountSettingsPage/>}></Route>
-                        <div>test</div>
+                        element={<AccountSettingsPage/>}>
+                    </Route>
                 </Routes>
             </Layout>
         </Router>
