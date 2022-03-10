@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import classes from "./SearchPage.module.css";
 import Card from "../ui/Card";
 import MapsView from "../ui/MapsView";
 import GasStationList from "../gasstations/GasStationList";
 import TestMapsView from "../ui/TestMapsView";
 import { Button, Row, Col } from "react-bootstrap";
+import SearchModal from "../ui/SearchModal";
 
 function SearchPage() {
   const DUMMY_DATA = [
@@ -30,9 +31,21 @@ function SearchPage() {
       date: "05.03.2022",
     },
   ];
+  const [modalSearchIsOpen, setModalSearchIsOpen] = useState(false);
+
+  function NewSearchButtonHandler() {
+    modalSearchIsOpen
+      ? setModalSearchIsOpen(false)
+      : setModalSearchIsOpen(true);
+  }
+
+  function closeNewSearchModalHandler() {
+    setModalSearchIsOpen(false);
+  }
 
   return (
     <>
+    { modalSearchIsOpen && <SearchModal isOpen={modalSearchIsOpen} onCancel={closeNewSearchModalHandler} /> }
       <div className={classes.container}>
         {/* <div className={classes.containerOverview}>
           <h1>Overview</h1>
@@ -56,7 +69,7 @@ function SearchPage() {
               <h1>Search results:</h1>
             </Col>
             <Col className={classes.colButton}>
-              <Button variant="secondary">+</Button>
+              <Button onClick={NewSearchButtonHandler} variant="secondary">+</Button>
             </Col>
           </Row>
 
