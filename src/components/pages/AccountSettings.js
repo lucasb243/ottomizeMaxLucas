@@ -6,12 +6,14 @@ import RegisterModal from "../ui/RegisterModal";
 import Backdrop from "../ui/Backdrop";
 import { Button, Col, Container, Row } from "react-bootstrap";
 import UserContext from "../store/user-context";
+import EditProfileForm from "../ui/forms/EditProfileFrom";
 
 function AccountSettingsPage(props) {
 
     const userCtx = useContext(UserContext);
 
     const [modalRegisterIsOpen, setModalRegisterIsOpen] = useState(false);
+    const [modalEditAccountIsOpen, setModalEditAccountIsOpen] = useState(false);
 
     
 
@@ -30,7 +32,13 @@ function AccountSettingsPage(props) {
         });
         closeModalHandler();
     }
+    function handleEditUser(){
+        setModalEditAccountIsOpen(true);
 
+    }
+    function handleEditUserSubmit(){
+        
+    }
     return (
         <>
             <div className={classes.container}>
@@ -38,7 +46,8 @@ function AccountSettingsPage(props) {
                 <div className={classes.container2} >
                     <h1>Account</h1>
                     <div className={classes.editIconContainer}>
-                        <img className={classes.editIcon} src={editIcon} alt="Edit"/>
+                        <img className={classes.editIcon} onClick={handleEditUser} src={editIcon} alt="Edit"/>
+                        { modalEditAccountIsOpen && <EditProfileForm isOpen={modalEditAccountIsOpen} onSubmit={handleEditUserSubmit} onCancel={closeModalHandler} /> }
                     </div>
                 </div>
                     <div className={classes.container1}>
