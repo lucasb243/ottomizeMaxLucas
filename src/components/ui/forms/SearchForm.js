@@ -52,20 +52,30 @@ function Searchform(props) {
                 <Form.Control type="text" placeholder="Enter city" />
               </Form.Group>
 
-              <Form.Group as={Col} controlId="formGridPassword">
-                <Form.Label className="mt-2">Radius</Form.Label>
-                <Form.Control type="text" placeholder="Enter Radius" />
-              </Form.Group>
+              <Row className="mb-2">
+                <Form.Group as={Col} controlId="formGridPassword">
+                  <Form.Label className="mt-2">Radius</Form.Label>
+                  <Form.Select aria-label="Default select example">
+                    <option>Select radius</option>
+                    <option value="1">1 km</option>
+                    <option value="2">2 km</option>
+                    <option value="3">5 km</option>
+                    <option value="3">10 km</option>
+                    <option value="3">15 km</option>
+                    <option value="3">20 km</option>
+                    <option value="3">50 km</option>
+                  </Form.Select>
+                </Form.Group>
 
-              <Form.Group>
-                <Form.Label className="mt-2">Fuel type</Form.Label>
-                <Form.Select aria-label="Default select example">
-                  <option>Select fuel type</option>
-                  <option value="1">Diesel</option>
-                  <option value="2">Super E5</option>
-                  <option value="3">Super E10</option>
-                </Form.Select>
-                {/* <InputGroup className="mb-3">
+                <Form.Group as={Col}>
+                  <Form.Label className="mt-2">Fuel type</Form.Label>
+                  <Form.Select aria-label="Default select example">
+                    <option>Select fuel type</option>
+                    <option value="1">Diesel</option>
+                    <option value="2">Super E5</option>
+                    <option value="3">Super E10</option>
+                  </Form.Select>
+                  {/* <InputGroup className="mb-3">
                   <FormControl
                     aria-label="Text input with dropdown button"
                     placeholder="Select fuel type"
@@ -82,7 +92,8 @@ function Searchform(props) {
                     <Dropdown.Item href="#">Super E10</Dropdown.Item>
                   </DropdownButton>
                 </InputGroup> */}
-              </Form.Group>
+                </Form.Group>
+              </Row>
 
               {/* <Row className="mb-3">
                 <Form.Group as={Col} controlId="formGridAddress1">
