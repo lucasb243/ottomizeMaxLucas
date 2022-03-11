@@ -18,18 +18,18 @@ function SearchPage() {
     },
     {
       uuid: "2",
-      stationname: "Tankstelle 1",
+      stationname: "Tankstelle 2",
       additionalinfo: "12km",
       price: "1,23€",
       date: "05.03.2022",
     },
     {
       uuid: "3",
-      stationname: "Tankstelle 1",
+      stationname: "Tankstelle 3",
       additionalinfo: "12km",
       price: "1,23€",
       date: "05.03.2022",
-    },
+    }
   ];
   const [modalSearchIsOpen, setModalSearchIsOpen] = useState(false);
 
@@ -45,7 +45,12 @@ function SearchPage() {
 
   return (
     <>
-    { modalSearchIsOpen && <SearchModal isOpen={modalSearchIsOpen} onCancel={closeNewSearchModalHandler} /> }
+      {modalSearchIsOpen && (
+        <SearchModal
+          isOpen={modalSearchIsOpen}
+          onCancel={closeNewSearchModalHandler}
+        />
+      )}
       <div className={classes.container}>
         {/* <div className={classes.containerOverview}>
           <h1>Overview</h1>
@@ -69,7 +74,9 @@ function SearchPage() {
               <h1>Search results:</h1>
             </Col>
             <Col className={classes.colButton}>
-              <Button onClick={NewSearchButtonHandler} variant="secondary">+</Button>
+              <Button onClick={NewSearchButtonHandler} variant="secondary">
+                +
+              </Button>
             </Col>
           </Row>
 

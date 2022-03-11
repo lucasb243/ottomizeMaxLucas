@@ -43,23 +43,29 @@ function Searchform(props) {
 
             <Modal.Body>
               <Form.Group controlId="formGridUserName">
-                <Form.Label>Post code</Form.Label>
+                <Form.Label className="mt-2">Post code</Form.Label>
                 <Form.Control type="text" placeholder="Enter post code" />
               </Form.Group>
 
               <Form.Group controlId="formGridEmail">
-                <Form.Label>City</Form.Label>
+                <Form.Label className="mt-2">City</Form.Label>
                 <Form.Control type="text" placeholder="Enter city" />
               </Form.Group>
 
               <Form.Group as={Col} controlId="formGridPassword">
-                <Form.Label>Radius</Form.Label>
+                <Form.Label className="mt-2">Radius</Form.Label>
                 <Form.Control type="text" placeholder="Enter Radius" />
               </Form.Group>
 
               <Form.Group>
-                <Form.Label>Fuel type</Form.Label>
-                <InputGroup className="mb-3">
+                <Form.Label className="mt-2">Fuel type</Form.Label>
+                <Form.Select aria-label="Default select example">
+                  <option>Select fuel type</option>
+                  <option value="1">Diesel</option>
+                  <option value="2">Super E5</option>
+                  <option value="3">Super E10</option>
+                </Form.Select>
+                {/* <InputGroup className="mb-3">
                   <FormControl
                     aria-label="Text input with dropdown button"
                     placeholder="Select fuel type"
@@ -75,29 +81,29 @@ function Searchform(props) {
                     <Dropdown.Item href="#">Super E5</Dropdown.Item>
                     <Dropdown.Item href="#">Super E10</Dropdown.Item>
                   </DropdownButton>
-                </InputGroup>
+                </InputGroup> */}
               </Form.Group>
 
               <Row className="mb-3">
                 <Form.Group as={Col} controlId="formGridAddress1">
-                  <Form.Label>Date from</Form.Label>
+                  <Form.Label className="mt-2">Date from</Form.Label>
                   <Form.Control type="date" />
                 </Form.Group>
 
                 <Form.Group as={Col} controlId="formGridAddress1">
-                  <Form.Label>Date to</Form.Label>
+                  <Form.Label className="mt-2">Date to</Form.Label>
                   <Form.Control type="date" />
                 </Form.Group>
               </Row>
 
               <Row className="mb-3">
                 <Form.Group as={Col} controlId="formGridAddress1">
-                  <Form.Label>Time from</Form.Label>
+                  <Form.Label className="mt-2">Time from</Form.Label>
                   <Form.Control type="time" />
                 </Form.Group>
 
                 <Form.Group as={Col} controlId="formGridAddress1">
-                  <Form.Label>Time to</Form.Label>
+                  <Form.Label className="mt-2">Time to</Form.Label>
                   <Form.Control type="time" />
                 </Form.Group>
               </Row>
@@ -129,15 +135,17 @@ function Searchform(props) {
               <div className={classes.containerOverview}>
                 <Row className="row">
                   <Button
+                    className="m-1"
                     variant="secondary"
                     type="button"
                     size="lg"
                   >
-                    Show result
+                    Show results
                   </Button>
                 </Row>
                 <Row>
                   <Button
+                    className="m-1"
                     variant="secondary"
                     type="button"
                     size="lg"
