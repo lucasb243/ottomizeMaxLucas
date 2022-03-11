@@ -4,7 +4,7 @@ import editIcon from "../ui/icons/edit.png";
 import classes from "./AccountSettings.module.css"
 import RegisterModal from "../ui/RegisterModal";
 import Backdrop from "../ui/Backdrop";
-import { Button, Col, Container, Row } from "react-bootstrap";
+import { Button, Col, Container, Row, Image } from "react-bootstrap";
 import UserContext from "../store/user-context";
 import EditProfileForm from "../ui/forms/EditProfileFrom";
 
@@ -37,18 +37,19 @@ function AccountSettingsPage(props) {
 
     }
     function handleEditUserSubmit(){
-        
+
     }
+    
     return (
         <>
             <div className={classes.container}>
 
                 <div className={classes.container2} >
                     <h1>Account</h1>
-                    <div className={classes.editIconContainer}>
-                        <img className={classes.editIcon} onClick={handleEditUser} src={editIcon} alt="Edit"/>
-                        { modalEditAccountIsOpen && <EditProfileForm isOpen={modalEditAccountIsOpen} onSubmit={handleEditUserSubmit} onCancel={closeModalHandler} /> }
-                    </div>
+                    <Button className={classes.editIconContainer} onClick={handleEditUser}>
+                        <Image fluid className={classes.editIcon} src={editIcon} alt="Edit"/>
+                    </Button>
+                    { modalEditAccountIsOpen && <EditProfileForm isOpen={modalEditAccountIsOpen} onSubmit={handleEditUserSubmit} onCancel={closeModalHandler} /> }
                 </div>
                     <div className={classes.container1}>
                         <ProfileIcon  image={ userCtx.icon } name={ userCtx.name } />
