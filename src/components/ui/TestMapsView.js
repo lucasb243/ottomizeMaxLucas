@@ -69,6 +69,22 @@ const dummyGasStations = [
     street: "Siemensstraße",
     house_number: "37",
     position: [50.10236, 8.695524],
+  },
+  {
+    post_code: "68165",
+    city: "Mannheim",
+    brand: "Shell",
+    street: "Seckenheimer Str.",
+    house_number: "17",
+    position: [49.480509, 8.479488],
+  },
+  {
+    post_code: "68163",
+    city: "Mannheim-Neuostheim",
+    brand: "E-Center",
+    street: "Seckenheimer Landstr.",
+    house_number: "246",
+    position: [49.47353, 8.536847],
   }
 ];
 
