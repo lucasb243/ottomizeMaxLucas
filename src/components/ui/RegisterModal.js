@@ -7,7 +7,7 @@ function RegisterModal(props) {
 
     return(
         <div className={classes.modal}>
-            <Registerform show={props.isOpen} onClose={props.onCancel}/>
+            <Registerform onClickSubmit={props.onSubmit} show={props.isOpen} onClose={props.onCancel}/>
         </div>
     )
 }

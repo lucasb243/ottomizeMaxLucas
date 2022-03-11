@@ -3,27 +3,7 @@ import React, {useEffect, useState} from 'react';
 import {Col, Form, Row} from 'react-bootstrap';
 
 
-function Registerform(props) {
-
-    const [isLoadingSubmit, setLoading] = useState(false);
-
-    useEffect(() => {
-        if (isLoadingSubmit) {
-            simulateNetworkRequest().then(() => {
-                setLoading(false);
-            });
-        }
-    }, [isLoadingSubmit]);
-
-    function handleSubmit(props){
-        setLoading(true);
-        props.onClickSubmit()
-    }
-    const handleClick = () => handleSubmit(props);
-
-    function simulateNetworkRequest() {
-        return new Promise((resolve) => setTimeout(resolve, 2000));
-    }
+function EditProfileForm(props) {
 
     return (
         <>
@@ -32,7 +12,7 @@ function Registerform(props) {
                 aria-labelledby="contained-modal-title-vcenter">
                     <Modal.Dialog className="m-0">
                         <Modal.Header closeButton>
-                            <Modal.Title>Register</Modal.Title>
+                            <Modal.Title>Edit User</Modal.Title>
                         </Modal.Header>
 
                         <Modal.Body>
@@ -71,28 +51,6 @@ function Registerform(props) {
                                 <Form.Control placeholder="Apartment, studio, or floor"/>
                             </Form.Group>
 
-                            <Row className="mb-3">
-                                <Form.Group as={Col}
-                                    controlId="formGridCity">
-                                    <Form.Label>City</Form.Label>
-                                    <Form.Control/>
-                                </Form.Group>
-
-                                <Form.Group as={Col}
-                                    controlId="formGridState">
-                                    <Form.Label>State</Form.Label>
-                                    <Form.Select defaultValue="Choose...">
-                                        <option>Choose...</option>
-                                        <option>...</option>
-                                    </Form.Select>
-                                </Form.Group>
-
-                                <Form.Group as={Col}
-                                    controlId="formGridZip">
-                                    <Form.Label>Zip</Form.Label>
-                                    <Form.Control/>
-                                </Form.Group>
-                            </Row>
                         </Modal.Body>
 
                         <Modal.Footer>
@@ -103,8 +61,8 @@ function Registerform(props) {
                                 size="lg">
                                 Cancel
                             </Button>
-                            <Button variant="primary" type="submit" size="lg" disabled={isLoadingSubmit} onClick={ !isLoadingSubmit ? handleClick : null}> 
-                                {isLoadingSubmit ? 'Loading…' : 'Submit'} 
+                            <Button variant="primary" type="submit" size="lg" onClick={null}> 
+                                Submit 
                             </Button>
 
                         </Modal.Footer>
@@ -115,4 +73,4 @@ function Registerform(props) {
     )
 }
 
-export default Registerform;
+export default EditProfileForm;
