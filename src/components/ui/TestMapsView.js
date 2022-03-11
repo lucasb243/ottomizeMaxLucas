@@ -5,6 +5,8 @@ import L from "leaflet";
 
 import icon from "./constants";
 
+const radius=1000;
+
 const dummyGasStations = [
   {
     post_code: "64546",
@@ -136,8 +138,9 @@ export default function TestMapsView() {
 
   return (
     <MapContainer
-      center={[49.1951, 16.6068]}
-      zoom={13}
+      center={[50.217450, 7.907970]} /* Holzhausen an der Tauber als Geburtsort von Nicolaus August Otto - dem Gründer des Otto Motors und 
+                                        der Inspiration von "Ottomize" */
+      zoom={12}
       scrollWheelZoom
     >
       <TileLayer

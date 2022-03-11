@@ -42,18 +42,18 @@ function Searchform(props) {
             </Modal.Header>
 
             <Modal.Body>
-              <Form.Group controlId="formGridUserName">
+              <Form.Group controlId="formPostCode">
                 <Form.Label className="mt-2">Post code</Form.Label>
                 <Form.Control type="text" placeholder="Enter post code" />
               </Form.Group>
 
-              <Form.Group controlId="formGridEmail">
+              <Form.Group controlId="formCity">
                 <Form.Label className="mt-2">City</Form.Label>
                 <Form.Control type="text" placeholder="Enter city" />
               </Form.Group>
 
               <Row className="mb-2">
-                <Form.Group as={Col} controlId="formGridPassword">
+                <Form.Group as={Col} controlId="formRadius">
                   <Form.Label className="mt-2">Radius</Form.Label>
                   <Form.Select aria-label="Default select example">
                     <option>Select radius</option>
@@ -65,9 +65,11 @@ function Searchform(props) {
                     <option value="3">20 km</option>
                     <option value="3">50 km</option>
                   </Form.Select>
+                  {/* <Form.Control value={this.state.val}
+                  onChange={e => this.setState({ val: e.target.value})}/> */}
                 </Form.Group>
 
-                <Form.Group as={Col}>
+                <Form.Group as={Col} controlId="formFuelType">
                   <Form.Label className="mt-2">Fuel type</Form.Label>
                   <Form.Select aria-label="Default select example">
                     <option>Select fuel type</option>
@@ -108,7 +110,7 @@ function Searchform(props) {
               </Row> */}
 
               <Row className="mb-2">
-                <Form.Group as={Col}>
+                <Form.Group as={Col} controlId="formDays">
                   <Form.Label className="mt-2">Days</Form.Label>
                   <Form.Select>
                     <option>Select days</option>
@@ -122,12 +124,12 @@ function Searchform(props) {
                   </Form.Select>
                 </Form.Group>
 
-                <Form.Group as={Col} controlId="formGridAddress1">
+                <Form.Group as={Col} controlId="formTimeFrom">
                   <Form.Label className="mt-2">Time from</Form.Label>
                   <Form.Control type="time" />
                 </Form.Group>
 
-                <Form.Group as={Col} controlId="formGridAddress1">
+                <Form.Group as={Col} controlId="formTimeTo">
                   <Form.Label className="mt-2">Time to</Form.Label>
                   <Form.Control type="time" />
                 </Form.Group>

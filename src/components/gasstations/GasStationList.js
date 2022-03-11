@@ -12,7 +12,8 @@ function GasStationList(props){
             stationname={gasStation.stationname}
             additionalInfo={gasStation.additionalInfo}
             price={gasStation.price}
-            date={gasStation.date}/>
+            date={gasStation.date}
+            time={gasStation.time}/>
             )
         } </ul>
     )

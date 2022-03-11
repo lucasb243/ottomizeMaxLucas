@@ -15,6 +15,7 @@ function SearchPage() {
       additionalinfo: "12km",
       price: "1,23€",
       date: "05.03.2022",
+      time: "09:00",
     },
     {
       uuid: "2",
@@ -22,6 +23,7 @@ function SearchPage() {
       additionalinfo: "12km",
       price: "1,23€",
       date: "05.03.2022",
+      time: "09:00",
     },
     {
       uuid: "3",
@@ -29,6 +31,7 @@ function SearchPage() {
       additionalinfo: "12km",
       price: "1,23€",
       date: "05.03.2022",
+      time: "09:00",
     }
   ];
   const [modalSearchIsOpen, setModalSearchIsOpen] = useState(false);

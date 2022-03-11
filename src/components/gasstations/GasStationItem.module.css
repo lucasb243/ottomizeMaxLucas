@@ -1,22 +1,24 @@
-.itemContainer{
-    display: flex;
-    flex-direction: row;
+.itemContainer {
+  display: flex;
+  flex-direction: row;
 }
-.container1{
-    width: 100%;
+.container1 {
+  width: 100%;
 }
-.stationname{
-    font-weight: bold;
+.stationname {
+  font-weight: bold;
 }
-.additionalinfo{
-
+.additionalinfo {
 }
-.container2{
-    position: right;
+.container2 {
+  text-align: center;
 }
-.price{
-    font-weight: bold;
+.container3 {
+  position: right;
+  text-align: right;
 }
-.date{
-    
+.price {
+  font-weight: bold;
+}
+.date {
 }
