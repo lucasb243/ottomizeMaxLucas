@@ -1,0 +1,11 @@
+.containerOverview {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+}
+
+.row {
+  justify-content: center;
+  margin-bottom: 20px;
+}

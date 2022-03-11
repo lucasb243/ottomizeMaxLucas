@@ -1,6 +1,14 @@
-import { Button, Modal } from "react-bootstrap";
+import {
+  Button,
+  DropdownButton,
+  Dropdown,
+  InputGroup,
+  FormControl,
+  Modal,
+} from "react-bootstrap";
 import React, { useEffect, useState } from "react";
 import { Col, Form, Row } from "react-bootstrap";
+import classes from "./SearchForm.module.css";
 
 function Searchform(props) {
   const [isLoadingSubmit, setLoading] = useState(false);
@@ -49,9 +57,25 @@ function Searchform(props) {
                 <Form.Control type="text" placeholder="Enter Radius" />
               </Form.Group>
 
-              <Form.Group as={Col} controlId="formGridPasswordConfirm">
+              <Form.Group>
                 <Form.Label>Fuel type</Form.Label>
-                <Form.Control type="text" placeholder="Enter fuel type" />
+                <InputGroup className="mb-3">
+                  <FormControl
+                    aria-label="Text input with dropdown button"
+                    placeholder="Select fuel type"
+                  />
+
+                  <DropdownButton
+                    variant="outline-secondary"
+                    title="Dropdown"
+                    id="input-group-dropdown-2"
+                    align="end"
+                  >
+                    <Dropdown.Item href="#">Diesel</Dropdown.Item>
+                    <Dropdown.Item href="#">Super E5</Dropdown.Item>
+                    <Dropdown.Item href="#">Super E10</Dropdown.Item>
+                  </DropdownButton>
+                </InputGroup>
               </Form.Group>
 
               <Row className="mb-3">
@@ -62,22 +86,21 @@ function Searchform(props) {
 
                 <Form.Group as={Col} controlId="formGridAddress1">
                   <Form.Label>Date to</Form.Label>
-                  <Form.Control type="date"/>
+                  <Form.Control type="date" />
                 </Form.Group>
               </Row>
 
               <Row className="mb-3">
                 <Form.Group as={Col} controlId="formGridAddress1">
                   <Form.Label>Time from</Form.Label>
-                  <Form.Control type="time"/>
+                  <Form.Control type="time" />
                 </Form.Group>
 
                 <Form.Group as={Col} controlId="formGridAddress1">
                   <Form.Label>Time to</Form.Label>
-                  <Form.Control type="time"/>
+                  <Form.Control type="time" />
                 </Form.Group>
               </Row>
-
 
               {/* <Row className="mb-3">
                                 <Form.Group as={Col}
@@ -102,25 +125,27 @@ function Searchform(props) {
                                 </Form.Group>
                             </Row> */}
             </Modal.Body>
-
             <Modal.Footer>
-              <Button
-                variant="secondary"
-                type="button"
-                onClick={props.onClose}
-                size="lg"
-              >
-                Cancel
-              </Button>
-              <Button
-                variant="primary"
-                type="submit"
-                size="lg"
-                disabled={isLoadingSubmit}
-                onClick={!isLoadingSubmit ? handleClick : null}
-              >
-                {isLoadingSubmit ? "Loading…" : "Submit"}{" "}
-              </Button>
+              <div className={classes.containerOverview}>
+                <Row className="row">
+                  <Button
+                    variant="secondary"
+                    type="button"
+                    size="lg"
+                  >
+                    Show result
+                  </Button>
+                </Row>
+                <Row>
+                  <Button
+                    variant="secondary"
+                    type="button"
+                    size="lg"
+                  >
+                    Save to favorite
+                  </Button>
+                </Row>
+              </div>
             </Modal.Footer>
           </Modal.Dialog>
         </Modal>
