@@ -84,7 +84,7 @@ function Searchform(props) {
                 </InputGroup> */}
               </Form.Group>
 
-              <Row className="mb-3">
+              {/* <Row className="mb-3">
                 <Form.Group as={Col} controlId="formGridAddress1">
                   <Form.Label className="mt-2">Date from</Form.Label>
                   <Form.Control type="date" />
@@ -94,9 +94,23 @@ function Searchform(props) {
                   <Form.Label className="mt-2">Date to</Form.Label>
                   <Form.Control type="date" />
                 </Form.Group>
-              </Row>
+              </Row> */}
 
-              <Row className="mb-3">
+              <Row className="mb-2">
+                <Form.Group as={Col}>
+                  <Form.Label className="mt-2">Days</Form.Label>
+                  <Form.Select>
+                    <option>Select days</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="1">4</option>
+                    <option value="2">5</option>
+                    <option value="3">6</option>
+                    <option value="1">7</option>
+                  </Form.Select>
+                </Form.Group>
+
                 <Form.Group as={Col} controlId="formGridAddress1">
                   <Form.Label className="mt-2">Time from</Form.Label>
                   <Form.Control type="time" />
