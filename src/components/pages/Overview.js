@@ -1,6 +1,7 @@
 import React from "react";
 import {Card, Col, Container, Row} from "react-bootstrap";
 import GasStationList from "../gasstations/GasStationList";
+import LogInForm from "../ui/forms/LogInForm";
 import GasChart from "../ui/GasChart";
 import classes from "./Overview.module.css"
 
@@ -42,7 +43,6 @@ function OverviewPage() {
                                     <GasChart className={classes.chart}/>
                                 </Card>
                             </Col>
-                            
                             <Col p={4}>
                                 <Card>
                                     <div className={classes.chartinfos}>

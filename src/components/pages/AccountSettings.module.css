@@ -11,6 +11,9 @@
     align-items: center;
     width: 100%;
 }
+.container1 h1, p{
+    align-self: flex-start;
+}
 .container2{
     display: flex;
     flex-direction: row;
