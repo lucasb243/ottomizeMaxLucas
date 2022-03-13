@@ -17,7 +17,7 @@ function Registerform(props) {
 
     function handleSubmit(props){
         setLoading(true);
-        props.onClickSubmit()
+        props.onSubmit()
     }
     const handleClick = () => handleSubmit(props);
 
@@ -70,29 +70,6 @@ function Registerform(props) {
                                 <Form.Label>Address 2</Form.Label>
                                 <Form.Control placeholder="Apartment, studio, or floor"/>
                             </Form.Group>
-
-                            <Row className="mb-3">
-                                <Form.Group as={Col}
-                                    controlId="formGridCity">
-                                    <Form.Label>City</Form.Label>
-                                    <Form.Control/>
-                                </Form.Group>
-
-                                <Form.Group as={Col}
-                                    controlId="formGridState">
-                                    <Form.Label>State</Form.Label>
-                                    <Form.Select defaultValue="Choose...">
-                                        <option>Choose...</option>
-                                        <option>...</option>
-                                    </Form.Select>
-                                </Form.Group>
-
-                                <Form.Group as={Col}
-                                    controlId="formGridZip">
-                                    <Form.Label>Zip</Form.Label>
-                                    <Form.Control/>
-                                </Form.Group>
-                            </Row>
                         </Modal.Body>
 
                         <Modal.Footer>

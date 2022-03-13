@@ -36,7 +36,8 @@ export function UserContextProvider(props){
     const [userName, setUserName] = useState("");
     const [userIcon, setUserIcon] = useState("https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_640.png");
     const [userEmail, setUserEmail] = useState("");
-    const [userAddresses, setUserAddresses] = useState([{id: -1, street:"", city: "", type:""}]);
+    const [userAddresses, setUserAddresses] = useState([{id: 1, street:"Seckenheimer Landstaße 4a", city: "Mannheim", postcode: 68163, type:"Home"},
+    {id: 2, street:"Hauptstraße 14", city: "Minfeld", postcode: 76872, type:"Home"}]);
 
     function changeUserNameHandler(userName){setUserName(userName)}
     function changeLoggedInHandler(){setUserLoggedIn(!userLoggedIn)}
@@ -74,6 +75,7 @@ export function UserContextProvider(props){
             loggedIn: userLoggedIn,
             name: userName,
             icon: userIcon,
+            email: userEmail,
             addresses: userAddresses,
             logInUser:  logInHandler,
             logOutUser: logOutHandler,

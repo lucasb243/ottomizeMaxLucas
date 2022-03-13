@@ -24,14 +24,14 @@ const Sidebar = () => {
 
         <CDBSidebarContent className="sidebar-content">
           <CDBSidebarMenu>
-            <NavLink exact to="/" activeClassName="activeClicked">
+            <NavLink to="/" activeClassName="activeClicked">
               <CDBSidebarMenuItem icon="columns">Overview</CDBSidebarMenuItem>
             </NavLink>
-            <NavLink exact to="/searchpage" activeClassName="activeClicked">
+            <NavLink to="/searchpage" activeClassName="activeClicked">
               <CDBSidebarMenuItem icon="fa-solid fa-search" >Search Page</CDBSidebarMenuItem>
             
             </NavLink>
-            <NavLink exact to="/account" activeclassName="activeClicked">
+            <NavLink to="/account" activeclassName="activeClicked">
               <CDBSidebarMenuItem icon="user">Account</CDBSidebarMenuItem>
             </NavLink>
           </CDBSidebarMenu>
