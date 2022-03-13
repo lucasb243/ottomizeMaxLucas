@@ -38,12 +38,12 @@ function OverviewPage() {
                     <h1>Overview</h1>
                     <Container>
                         <Row>
-                            <Col p={8}>
+                            <Col lg={8}>
                                 <Card>          
                                     <GasChart className={classes.chart}/>
                                 </Card>
                             </Col>
-                            <Col p={4}>
+                            <Col lg={4}>
                                 <Card>
                                     <div className={classes.chartinfos}>
                                         <ul>

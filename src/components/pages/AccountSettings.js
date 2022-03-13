@@ -8,6 +8,7 @@ import EditProfileForm from "../ui/forms/EditProfileFrom";
 import AddressList from "../ui/AddressList";
 import LogInForm from "../ui/forms/LogInForm";
 import Registerform from "../ui/forms/RegisterForm";
+import SettingsForm from "../ui/forms/SettingsForm";
 
 function AccountSettingsPage(props) {
 
@@ -69,7 +70,7 @@ function AccountSettingsPage(props) {
 
                 <div className={classes.container2} >
                     <h1>Account</h1>
-                    <Button className={classes.editIconContainer} onClick={handleEditUserButton}>
+                    <Button variant="link" className={classes.editIconContainer} onClick={handleEditUserButton}>
                         <Image fluid className={classes.editIcon} src={editIcon} alt="Edit"/>
                     </Button>
                     { modalEditAccountIsOpen && <EditProfileForm show={modalEditAccountIsOpen} onSubmit={handleEditUserSubmit} onClose={closeEditAccountModalHandler} /> }
@@ -84,14 +85,18 @@ function AccountSettingsPage(props) {
                 </div>
                 
                 <div className={classes.container1}>
-                    <h1>Addresses</h1>
+                    <div className={classes.container2}>
+                        <h1>Addresses</h1>
+                        <span className={classes.editIconContainer}>
+                            <img className={classes.editIcon} src={editIcon} alt="Edit"/>
+                        </span>
+                    </div>
                     {userCtx.loggedIn ? <AddressList list={userCtx.addresses} /> : <p>Please log in</p>}
                 </div>
-                <div className={classes.container2} >
+                <div className={classes.container1} >
                     <h1>Settings</h1>
-                    <span className={classes.editIconContainer}>
-                        <img className={classes.editIcon} src={editIcon} alt="Edit"/>
-                    </span>
+                    <SettingsForm />
+                    
                 </div>
             </div>
         </>
