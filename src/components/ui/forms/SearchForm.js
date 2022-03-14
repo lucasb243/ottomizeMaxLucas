@@ -8,6 +8,7 @@ import {
 } from "react-bootstrap";
 import React, { useEffect, useState } from "react";
 import { Col, Form, Row } from "react-bootstrap";
+import RangeSlider from "react-bootstrap-range-slider";
 import classes from "./SearchForm.module.css";
 
 function Searchform(props) {
@@ -21,11 +22,17 @@ function Searchform(props) {
     }
   }, [isLoadingSubmit]);
 
-  const handleClick = () => setLoading(true);
+  function handleSubmit(props) {
+    setLoading(true);
+    props.onClickSubmit();
+  }
+  const handleClick = () => handleSubmit(props);
 
   function simulateNetworkRequest() {
     return new Promise((resolve) => setTimeout(resolve, 2000));
   }
+
+  const [value, setValue] = React.useState(10);
 
   return (
     <>
@@ -97,6 +104,22 @@ function Searchform(props) {
                 </Form.Group>
               </Row>
 
+              <Form.Group as={Row} controlId="formRadiusSlider">
+                <Form.Label column sm="4" className="mt-2">
+                  Radius
+                </Form.Label>
+                <Col sm="8">
+                  <RangeSlider
+                    className="mt-2"
+                    value={value}
+                    onChange={(e) => setValue(e.target.value)}
+                    min={1}
+                    max={20}
+                    tooltipLabel={(currentValue) => `${currentValue} km`}
+                  />
+                </Col>
+              </Form.Group>
+
               {/* <Row className="mb-3">
                 <Form.Group as={Col} controlId="formGridAddress1">
                   <Form.Label className="mt-2">Date from</Form.Label>
@@ -165,6 +188,7 @@ function Searchform(props) {
                     className="m-1"
                     variant="secondary"
                     type="button"
+                    onClick={props.onClose}
                     size="lg"
                   >
                     Show results
@@ -175,6 +199,7 @@ function Searchform(props) {
                     className="m-1"
                     variant="secondary"
                     type="button"
+                    onClick={props.onClose}
                     size="lg"
                   >
                     Save to favorite

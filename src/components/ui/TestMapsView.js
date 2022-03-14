@@ -5,7 +5,7 @@ import L from "leaflet";
 
 import icon from "./constants";
 
-const radius=1000;
+const radius=2500;
 
 const dummyGasStations = [
   {
@@ -115,7 +115,7 @@ export default function TestMapsView() {
       map.locate().on("locationfound", function (e) {
         setPosition(e.latlng);
         map.flyTo(e.latlng, map.getZoom());
-        const radius = 2500;
+        /* const radius = 2500; */
         const circle = L.circle(e.latlng, radius);
         circle.addTo(map);
         setBbox(e.bounds.toBBoxString().split(","));
