@@ -10,6 +10,7 @@ function AddressList(){
             <ul className={classes.list}>
                     {userCtx.loggedIn ? (userCtx.addresses.map(address =>
                     <AddressItem 
+                    key = {address.id}
                     street={address.street} 
                     city={address.city} />
                     )) : null} 

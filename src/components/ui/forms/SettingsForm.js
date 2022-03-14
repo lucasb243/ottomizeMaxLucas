@@ -14,7 +14,7 @@ function SettingsForm() {
     return (
         <div>
             <Form>
-                <Form.Switch custom type="switch" 
+                <Form.Switch type="switch" 
                     id="custom-switch" 
                     label="Enable geotracking"
                     onChange={onChangeGeoTracking}

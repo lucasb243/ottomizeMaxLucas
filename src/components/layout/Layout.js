@@ -11,7 +11,7 @@ function Layout(props){
         </header>
         <div className={classes.screen}>
             <Sidebar />
-            <Container fluid class="p-0" className={classes.container}>
+            <Container className={classes.container}>
                 
                 <div className={classes.content}>
                     <main className={classes.main}>

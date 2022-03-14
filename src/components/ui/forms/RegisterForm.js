@@ -5,11 +5,19 @@ import { Col, Form, Row } from "react-bootstrap";
 function Registerform(props) {
   const [isLoadingSubmit, setLoading] = useState(false);
 
-  useEffect(() => {
-    if (isLoadingSubmit) {
-      simulateNetworkRequest().then(() => {
-        setLoading(false);
-      });
+    const [isLoadingSubmit, setLoading] = useState(false);
+
+    useEffect(() => {
+        if (isLoadingSubmit) {
+            simulateNetworkRequest().then(() => {
+                setLoading(false);
+            });
+        }
+    }, [isLoadingSubmit]);
+
+    function handleSubmit(props){
+        setLoading(true);
+        props.onSubmit()
     }
   }, [isLoadingSubmit]);
 
@@ -65,31 +73,11 @@ function Registerform(props) {
                 <Form.Control placeholder="1234 Main St" />
               </Form.Group>
 
-              <Form.Group className="mb-3" controlId="formGridAddress2">
-                <Form.Label>Address 2</Form.Label>
-                <Form.Control placeholder="Apartment, studio, or floor" />
-              </Form.Group>
-
-              <Row className="mb-3">
-                <Form.Group as={Col} controlId="formGridCity">
-                  <Form.Label>City</Form.Label>
-                  <Form.Control />
-                </Form.Group>
-
-                <Form.Group as={Col} controlId="formGridState">
-                  <Form.Label>State</Form.Label>
-                  <Form.Select defaultValue="Choose...">
-                    <option>Choose...</option>
-                    <option>...</option>
-                  </Form.Select>
-                </Form.Group>
-
-                <Form.Group as={Col} controlId="formGridZip">
-                  <Form.Label>Zip</Form.Label>
-                  <Form.Control />
-                </Form.Group>
-              </Row>
-            </Modal.Body>
+                            <Form.Group className="mb-3" controlId="formGridAddress2">
+                                <Form.Label>Address 2</Form.Label>
+                                <Form.Control placeholder="Apartment, studio, or floor"/>
+                            </Form.Group>
+                        </Modal.Body>
 
             <Modal.Footer>
               <Button
