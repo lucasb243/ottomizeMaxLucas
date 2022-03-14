@@ -27,6 +27,7 @@ function LogInForm(props) {
 
     return (
         <>
+        {/*https://react-bootstrap.netlify.app/forms/validation --> for checking user inputs before sendig it to server*/}
             <div>
             <Form>
                 <Modal show={props.show} onHide={props.onClose} centered
