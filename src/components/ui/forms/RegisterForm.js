@@ -2,6 +2,7 @@ import { Button, Modal } from "react-bootstrap";
 import React, { useEffect, useState } from "react";
 import { Col, Form, Row } from "react-bootstrap";
 function Registerform(props) {
+
   const [isLoadingSubmit, setLoading] = useState(false);
   useEffect(() => {
     if (isLoadingSubmit) {
@@ -18,6 +19,8 @@ function Registerform(props) {
   function simulateNetworkRequest() {
     return new Promise((resolve) => setTimeout(resolve, 2000));
   }
+
+
   return (
     <>
       <Form>

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { MapContainer, TileLayer, Marker, Popup, useMap } from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import L from "leaflet";
+import classes from "./MapsView.module.css"
 
 import icon from "./constants";
 
@@ -138,6 +139,7 @@ export default function TestMapsView() {
 
   return (
     <MapContainer
+      className={classes.leafmap}
       center={[50.217450, 7.907970]} /* Holzhausen an der Tauber als Geburtsort von Nicolaus August Otto - dem Gründer des Otto Motors und 
                                         der Inspiration von "Ottomize" */
       zoom={12}

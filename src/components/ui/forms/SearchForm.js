@@ -5,14 +5,20 @@ import {
   InputGroup,
   FormControl,
   Modal,
+  OverlayTrigger,
 } from "react-bootstrap";
 import React, { useEffect, useState } from "react";
 import { Col, Form, Row } from "react-bootstrap";
 import RangeSlider from "react-bootstrap-range-slider";
 import classes from "./SearchForm.module.css";
+import TestMapsView from "../TestMapsView"
+import { Popover } from "bootstrap";
+import RadiusPopOver from "../RadiusPopover"
 
 function Searchform(props) {
   const [isLoadingSubmit, setLoading] = useState(false);
+  const [value, setValue] = React.useState(10);
+  const [selectRadiusIsOpen, setSelectRadiusIsOpen] = useState(true);
 
   useEffect(() => {
     if (isLoadingSubmit) {
@@ -32,7 +38,6 @@ function Searchform(props) {
     return new Promise((resolve) => setTimeout(resolve, 2000));
   }
 
-  const [value, setValue] = React.useState(10);
 
   return (
     <>
@@ -109,6 +114,7 @@ function Searchform(props) {
                   Radius
                 </Form.Label>
                 <Col sm="8">
+
                   <RangeSlider
                     className="mt-2"
                     value={value}
@@ -180,32 +186,34 @@ function Searchform(props) {
                                     <Form.Control/>
                                 </Form.Group>
                             </Row> */}
+                   <div className={classes.radiusMap}>
+                    {selectRadiusIsOpen && <TestMapsView  />}
+                   </div>         
             </Modal.Body>
             <Modal.Footer>
-              <div className={classes.containerOverview}>
-                <Row className="row">
-                  <Button
-                    className="m-1"
-                    variant="secondary"
-                    type="button"
-                    onClick={props.onClose}
-                    size="lg"
-                  >
-                    Show results
-                  </Button>
+                <Row >
+                  <Col>
+                    <Button
+                        variant="light"
+                        type="button"
+                        onClick={props.onClose}
+                      >Cancle</Button>
+                  </Col>
+                  <Col>
+                    <Button
+                      variant="secondary"
+                      type="button"
+                      onClick={props.onClose}
+                    >Save to favorite</Button>
+                  </Col>
+                  <Col >
+                    <Button
+                      variant="primary"
+                      type="button"
+                      onClick={props.onClose}
+                    >Show results</Button>
+                  </Col>
                 </Row>
-                <Row>
-                  <Button
-                    className="m-1"
-                    variant="secondary"
-                    type="button"
-                    onClick={props.onClose}
-                    size="lg"
-                  >
-                    Save to favorite
-                  </Button>
-                </Row>
-              </div>
             </Modal.Footer>
           </Modal.Dialog>
         </Modal>
