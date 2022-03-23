@@ -18,7 +18,7 @@ import RadiusPopOver from "../RadiusPopover"
 function Searchform(props) {
   const [isLoadingSubmit, setLoading] = useState(false);
   const [value, setValue] = React.useState(10);
-  const [selectRadiusIsOpen, setSelectRadiusIsOpen] = useState(true);
+  const [selectRadiusIsOpen, setSelectRadiusIsOpen] = useState(false);
 
   useEffect(() => {
     if (isLoadingSubmit) {
@@ -77,8 +77,6 @@ function Searchform(props) {
                     <option value="3">20 km</option>
                     <option value="3">50 km</option>
                   </Form.Select>
-                  {/* <Form.Control value={this.state.val}
-                  onChange={e => this.setState({ val: e.target.value})}/> */}
                 </Form.Group>
 
                 <Form.Group as={Col} controlId="formFuelType">
@@ -89,54 +87,32 @@ function Searchform(props) {
                     <option value="2">Super E5</option>
                     <option value="3">Super E10</option>
                   </Form.Select>
-                  {/* <InputGroup className="mb-3">
-                  <FormControl
-                    aria-label="Text input with dropdown button"
-                    placeholder="Select fuel type"
-                  />
-
-                  <DropdownButton
-                    variant="outline-secondary"
-                    title="Dropdown"
-                    id="input-group-dropdown-2"
-                    align="end"
-                  >
-                    <Dropdown.Item href="#">Diesel</Dropdown.Item>
-                    <Dropdown.Item href="#">Super E5</Dropdown.Item>
-                    <Dropdown.Item href="#">Super E10</Dropdown.Item>
-                  </DropdownButton>
-                </InputGroup> */}
                 </Form.Group>
               </Row>
 
               <Form.Group as={Row} controlId="formRadiusSlider">
-                <Form.Label column sm="4" className="mt-2">
-                  Radius
+                <Row >
+                  <Col>
+                  </Col>
+                </Row>
+                <Form.Label column className="mt-2">
+                    Radius
                 </Form.Label>
-                <Col sm="8">
-
+                <Col sm="6">
                   <RangeSlider
                     className="mt-2"
                     value={value}
                     onChange={(e) => setValue(e.target.value)}
                     min={1}
-                    max={20}
+                    max={50}
                     tooltipLabel={(currentValue) => `${currentValue} km`}
                   />
                 </Col>
+                <Col style={{alignItems: "center"}} sm="2">
+                  <Button variant="light" onClick={() => setSelectRadiusIsOpen(true)}>Map</Button>
+                </Col>
+
               </Form.Group>
-
-              {/* <Row className="mb-3">
-                <Form.Group as={Col} controlId="formGridAddress1">
-                  <Form.Label className="mt-2">Date from</Form.Label>
-                  <Form.Control type="date" />
-                </Form.Group>
-
-                <Form.Group as={Col} controlId="formGridAddress1">
-                  <Form.Label className="mt-2">Date to</Form.Label>
-                  <Form.Control type="date" />
-                </Form.Group>
-              </Row> */}
 
               <Row className="mb-2">
                 <Form.Group as={Col} controlId="formDays">
@@ -164,31 +140,16 @@ function Searchform(props) {
                 </Form.Group>
               </Row>
 
-              {/* <Row className="mb-3">
-                                <Form.Group as={Col}
-                                    controlId="formGridCity">
-                                    <Form.Label>City</Form.Label>
-                                    <Form.Control/>
-                                </Form.Group>
+                    {selectRadiusIsOpen && 
+                    <div className={classes.radiusMapContainer}>
+                      <div className={classes.radiusMap}>
+                        <TestMapsView  />  
+                      </div>
+                      <div className={classes.closeRadiusBtnContainer}>
+                        <Button className={classes.closeRadiusBtn} onClick={() => setSelectRadiusIsOpen(false)}>Close</Button>
+                      </div>
+                    </div> }
 
-                                <Form.Group as={Col}
-                                    controlId="formGridState">
-                                    <Form.Label>State</Form.Label>
-                                    <Form.Select defaultValue="Choose...">
-                                        <option>Choose...</option>
-                                        <option>...</option>
-                                    </Form.Select>
-                                </Form.Group>
-
-                                <Form.Group as={Col}
-                                    controlId="formGridZip">
-                                    <Form.Label>Zip</Form.Label>
-                                    <Form.Control/>
-                                </Form.Group>
-                            </Row> */}
-                   <div className={classes.radiusMap}>
-                    {selectRadiusIsOpen && <TestMapsView  />}
-                   </div>         
             </Modal.Body>
             <Modal.Footer>
                 <Row >
